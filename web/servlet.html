@@ -1,0 +1,27 @@
+<p>.java, so that it received request, and then write a response <br> </p>
+<p>configure web.xml <br> 
+add the java path & mapping (web url) <br> </p>
+
+<p>This is the <code>Panel</code> constructor:</p>
+<pre><code>function Panel(element, canClose, closeHandler) {
+  this.element = element;
+  this.canClose = canClose;
+  this.closeHandler = function () { if (closeHandler) closeHandler() };
+}</code></pre>
+
+<pre><code>   
+<servlet>
+      <servlet-name>HelloWorldServlet</servlet-name>
+      <servlet-class>mypkg.HelloServlet</servlet-class>
+   </servlet>
+ 
+   <!-- Note: All <servlet> elements MUST be grouped together and
+         placed IN FRONT of the <servlet-mapping> elements -->
+ 
+   <servlet-mapping>
+      <servlet-name>HelloWorldServlet</servlet-name>
+      <url-pattern>/sayhello</url-pattern>
+   </servlet-mapping>
+</code></pre>
+
+<p></p>
