@@ -1,0 +1,19 @@
+ <p> The <strong>model</strong> contains the business logic and interact with the persistance storage to store, retrive and manipulate data. </p> 
+<p> The <strong>view</strong> is responsible for dispalying the results back to the user. In Struts the view layer is implemented using JSP. </p> 
+<p> The <strong>controller</strong> handles all the request from the user and selects the appropriate view to return. In Sruts the controller's job is done by the <em>ActionServlet</em>. <br /><br /><img src="http://cdn.dzone.com/static/images/vaannila/struts1/MvcArchitecture.gif" alt="" /></p>
+<p> The following events happen when the Client browser issues an HTTP request. </p>
+<ul>
+ <li> The <em>ActionServlet</em> receives the request.</li>
+ <li> The <em>struts-config.xml</em> file contains the details regarding the <em>Actions</em>, <em>ActionForms</em>, <em>ActionMappings</em> and <em>ActionForwards</em>.</li>
+ <li> During the startup the <em>ActionServelet</em> reads the <em>struts-config.xml</em> file and creates a database of configuration objects. Later while processing the request the <em>ActionServlet</em> makes decision by refering to this object.</li>
+</ul> 
+<p> When the <em>ActionServlet</em> receives the request it does the following tasks. </p>
+<ul>
+ <li> Bundles all the request values into a JavaBean class which extends Struts <em>ActionForm</em> class.</li>
+ <li> Decides which action class to invoke to process the request.</li>
+ <li> Validate the data entered by the user.</li>
+ <li> The action class process the request with the help of the model component. The model interacts with the database and process the request.</li>
+ <li> After completing the request processing the <em>Action</em> class returns an <em>ActionForward</em> to the controller.</li>
+ <li> Based on the <em>ActionForward</em> the controller will invoke the appropriate view.</li>
+ <li> The HTTP response is rendered back to the user by the view component.</li>
+</ul>
