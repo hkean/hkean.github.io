@@ -1,4 +1,4 @@
-<pre>
+
 <p>
 onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"' <br>
  <br>
@@ -8,24 +8,25 @@ onclick="document.getElementById('demo').style.display = 'block'" // make it vis
 </p>
 
 <p>
-<script> <br>
+script> <br>
 document.getElementById("demo").innerHTML = "My First JavaScript"; <br>
-</script> <br>
+/script> <br>
 </p>
 
 <p>
 // method <br>
-<script> <br>
+script> <br>
 function myFunction() { <br>
     document.getElementById("demo").innerHTML = "Paragraph changed."; <br>
 } <br>
-</script> <br>
+/script> <br>
 </p>
 
 <p>
 // call method  <br>
 <button type="button" onclick="myFunction()">Try it</button> <br>
-<script src="myScript1.js"></script> // external js <br>
+script src="myScript1.js"> <br>
+/script> // external js <br>
 </p>
 
 <p>
@@ -67,8 +68,7 @@ https://www.w3schools.com/js/js_examples.asp <br>
 
 <p>
 // form validation <br>
-<head> <br>
-<script> <br>
+script> <br>
 function validateForm() { <br>
     var x = document.forms["myForm"]["fname"].value; <br>
     if (x == "") { <br>
@@ -76,15 +76,13 @@ function validateForm() { <br>
         return false; <br>
     } <br>
 } <br>
-</script> <br>
-</head> <br>
-<body> <br>
-<form name="myForm" action="/action_page_post.php" <br>
+/script> <br>
+<br>
+form name="myForm" action="/action_page_post.php" <br>
 onsubmit="return validateForm()" method="post"> <br>
 Name: <input type="text" name="fname"> <br>
 <input type="submit" value="Submit"> <br>
-</form> <br>
-</body> <br>
+/form> <br>
 <br>
 disabled&ensp;	Specifies that the input element should be disabled <br>
 max&ensp;		Specifies the maximum value of an input element <br>
@@ -96,10 +94,11 @@ type&ensp; 		Specifies the type of an input element <br>
 
 <p>
 // form API <br>
-<input id="id1" type="number" max="100"> <br>
-<button onclick="myFunction()">OK</button> <br>
+input id="id1" type="number" max="100"> <br>
+button onclick="myFunction()">OK <br>
+/button> <br>
 <p id="demo"></p> <br>
-<script> <br>
+script> <br>
 function myFunction() { <br>
     var txt = ""; <br>
     if (document.getElementById("id1").validity.rangeOverflow) { <br>
@@ -107,7 +106,7 @@ function myFunction() { <br>
     } <br>
     document.getElementById("demo").innerHTML = txt; <br>
 } <br>
-</script> <br>
+/script> <br>
  <br>
 customError&ensp;		Set to true, if a custom validity message is set. <br>
 patternMismatch&ensp;	Set to true, if an element's value does not match its pattern attribute. <br>
@@ -124,4 +123,3 @@ valid&ensp;				Set to true, if an element's value is valid. <br>
 
  <br>
 </p>
-</pre>
