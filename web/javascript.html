@@ -1,0 +1,125 @@
+<p>
+onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"' <br>
+ <br>
+onclick="document.getElementById('demo').style.fontSize='35px'" <br>
+onclick="document.getElementById('demo').style.display = 'none'" // make it hidden <br>
+onclick="document.getElementById('demo').style.display = 'block'" // make it visible <br>
+</p>
+
+<p>
+<script> <br>
+document.getElementById("demo").innerHTML = "My First JavaScript"; <br>
+</script> <br>
+</p>
+
+<p>
+// method <br>
+<script> <br>
+function myFunction() { <br>
+    document.getElementById("demo").innerHTML = "Paragraph changed."; <br>
+} <br>
+</script> <br>
+</p>
+
+<p>
+// call method  <br>
+<button type="button" onclick="myFunction()">Try it</button> <br>
+<script src="myScript1.js"></script> // external js <br>
+</p>
+
+<p>
+// display  <br>
+Writing into an HTML element, using innerHTML. <br>
+Writing into the HTML output using document.write(). // useless <br>
+Writing into an alert box, using window.alert(). // pop up  <br>
+Writing into the browser console, using console.log(). // debug - 'f12', 'console' tab <br>
+</p>
+
+<p>
+// data types <br>
+var length = 16;                               // Number <br>
+var lastName = "Johnson";                      // String <br>
+var x = {firstName:"John", lastName:"Doe"};    // Object <br>
+var cars = ["Saab", "Volvo", "BMW"];		   // array but still object <br>
+</p>
+
+<p>
+// access object properties <br>
+objectName.propertyName // variable <br>
+objectName.methodName() // method <br>
+</p>
+
+<p>
+// event  <br>
+onchange&ensp;		An HTML element has been changed <br>
+onclick&ensp;		The user clicks an HTML element <br>
+onmouseover&ensp;	The user moves the mouse over an HTML element <br>
+onmouseout&ensp;	The user moves the mouse away from an HTML element <br>
+onkeydown&ensp;		The user pushes a keyboard key <br>
+onload&ensp;		The browser has finished loading the page <br>
+</p>
+
+<p>
+// more link <br>
+https://www.w3schools.com/js/js_examples.asp <br>
+</p>
+
+<p>
+// form validation <br>
+<head> <br>
+<script> <br>
+function validateForm() { <br>
+    var x = document.forms["myForm"]["fname"].value; <br>
+    if (x == "") { <br>
+        alert("Name must be filled out"); <br>
+        return false; <br>
+    } <br>
+} <br>
+</script> <br>
+</head> <br>
+<body> <br>
+<form name="myForm" action="/action_page_post.php" <br>
+onsubmit="return validateForm()" method="post"> <br>
+Name: <input type="text" name="fname"> <br>
+<input type="submit" value="Submit"> <br>
+</form> <br>
+</body> <br>
+<br>
+disabled&ensp;	Specifies that the input element should be disabled <br>
+max&ensp;		Specifies the maximum value of an input element <br>
+min&ensp;		Specifies the minimum value of an input element <br>
+pattern&ensp;	Specifies the value pattern of an input element <br>
+required&ensp;	Specifies that the input field requires an element <br>
+type&ensp; 		Specifies the type of an input element <br>
+</p>
+
+<p>
+// form API <br>
+<input id="id1" type="number" max="100"> <br>
+<button onclick="myFunction()">OK</button> <br>
+<p id="demo"></p> <br>
+<script> <br>
+function myFunction() { <br>
+    var txt = ""; <br>
+    if (document.getElementById("id1").validity.rangeOverflow) { <br>
+       txt = "Value too large"; <br>
+    } <br>
+    document.getElementById("demo").innerHTML = txt; <br>
+} <br>
+</script> <br>
+ <br>
+customError&ensp;		Set to true, if a custom validity message is set. <br>
+patternMismatch&ensp;	Set to true, if an element's value does not match its pattern attribute. <br>
+rangeOverflow&ensp;		Set to true, if an element's value is greater than its max attribute. <br>
+rangeUnderflow&ensp;	Set to true, if an element's value is less than its min attribute. <br>
+stepMismatch&ensp;		Set to true, if an element's value is invalid per its step attribute. <br>
+tooLong&ensp;			Set to true, if an element's value exceeds its maxLength attribute. <br>
+typeMismatch&ensp;		Set to true, if an element's value is invalid per its type attribute. <br>
+valueMissing&ensp;		Set to true, if an element (with a required attribute) has no value. <br>
+valid&ensp;				Set to true, if an element's value is valid. <br>
+</p>
+
+<p>
+
+ <br>
+</p>
