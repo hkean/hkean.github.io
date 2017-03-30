@@ -1,0 +1,170 @@
+<p>
+--data type  <br>
+NUMBER(10,2) <br>
+VARCHAR2(10) <br>
+%TYPE  <br>
+%ROWTYPE  <br>
+ <br>
+</p>
+
+<p>
+--control <br>
+IF condition1  THEN <br>
+   &ensp;sequence_of_statements1 <br>
+ELSIF condition2 THEN <br>
+   &ensp;sequence_of_statements2 <br>
+ELSE <br>
+   &ensp;sequence_of_statements3 <br>
+END IF; <br>
+ <br>
+</p>
+
+<p>
+--procedure <br>
+PROCEDURE name ( parameter, ... ) <br>
+IS <br>
+[--declarations  statements] <br>
+BEGIN <br>
+--executable statements <br>
+[ EXCEPTION <br>
+---exception handlers] <br>
+END; <br>
+ <br>
+</p>
+
+<p>
+CREATE OR REPLACE PROCEDURE adjust_salary( <br>
+    in_employee_id IN EMPLOYEES.EMPLOYEE_ID%TYPE, <br>
+    in_percent IN NUMBER <br>
+) IS <br>
+BEGIN <br>
+   -- update employee's salary <br>
+   UPDATE employees <br>
+   SET salary = salary + salary * in_percent / 100 <br>
+   WHERE employee_id = in_employee_id; <br>
+END; <br>
+ <br>
+</p>
+
+<p>
+EXEC procedure_name(); -- EXEC procedure_name(param1,param2…paramN); <br>
+EXEC procedure_name; <br>
+</p>
+
+<p>
+--function <br>
+CREATE OR REPLACE FUNCTION try_parse( <br>
+    iv_number IN VARCHAR2) <br>
+  RETURN NUMBER IS <br>
+BEGIN <br>
+   RETURN to_number(iv_number); <br>
+   EXCEPTION <br>
+     WHEN others THEN <br>
+        RETURN NULL; <br>
+END; <br>
+ <br>
+</p>
+
+<p>
+SELECT try_parse('1234') FROM dual; <br>
+</p>
+
+<p>
+--cursor -- similar to iterator  <br>
+SET SERVEROUTPUT ON SIZE 1000000; <br>
+DECLARE <br>
+  -- declare a cursor <br>
+  CURSOR cur_chief IS <br>
+      SELECT first_name, <br>
+             last_name, <br>
+             department_name <br>
+      FROM employees e <br>
+      INNER JOIN departments d ON d.manager_id = e.employee_id; <br>
+  <br>
+  r_chief cur_chief%ROWTYPE; <br>
+BEGIN <br>
+  OPEN cur_chief; <br>
+  LOOP <br>
+    -- fetch information from cursor into record <br>
+    FETCH cur_chief INTO r_chief; <br>
+  <br>
+    EXIT WHEN cur_chief%NOTFOUND; <br>
+  <br>
+    -- print department - chief <br>
+    DBMS_OUTPUT.PUT_LINE(r_chief.department_name || ' - ' || <br>
+                         r_chief.first_name || ',' || <br>
+                         r_chief.last_name); <br>
+  END LOOP; <br>
+  -- close cursor cur_chief <br>
+  CLOSE cur_chief; <br>
+END; <br>
+/ <br>
+ <br>
+</p>
+
+<p>
+--exception <br>
+  -- define exceptions <br>
+  BELOW_SALARY_RANGE EXCEPTION; <br>
+ <br>
+  IF n_salary < n_min_salary THEN <br>
+     RAISE BELOW_SALARY_RANGE; <br>
+  ELSIF n_salary > n_max_salary THEN <br>
+      RAISE ABOVE_SALARY_RANGE; <br>
+  END IF; <br>
+   <br>
+  EXCEPTION <br>
+    WHEN BELOW_SALARY_RANGE THEN <br>
+      dbms_output.put_line('Employee ' || n_emp_id || <br>
+			  ' has salary below the salary range'); <br>
+    WHEN ABOVE_SALARY_RANGE THEN <br>
+      dbms_output.put_line('Employee ' || n_emp_id || <br>
+			  ' has salary above the salary range'); <br>
+    WHEN NO_DATA_FOUND THEN <br>
+      DBMS_OUTPUT.PUT_LINE('Employee ' || n_emp_id || ' not found'); <br>
+ <br>
+</p>
+
+<p>
+--trigger <br>
+CREATE OR REPLACE TRIGGER display_salary_changes  <br>
+BEFORE --BEFORE OR ARFTER <br>
+DELETE OR INSERT OR UPDATE --CRUD <br>
+ON customers  --table name <br>
+FOR EACH ROW  <br>
+WHEN (NEW.ID > 0)  <br>
+DECLARE  <br>
+   sal_diff number;  <br>
+BEGIN  <br>
+   sal_diff := :NEW.salary  - :OLD.salary;  <br>
+   dbms_output.put_line('Old salary: ' || :OLD.salary);  <br>
+   dbms_output.put_line('New salary: ' || :NEW.salary);  <br>
+   dbms_output.put_line('Salary difference: ' || sal_diff);  <br>
+END;  <br>
+/  <br>
+ <br>
+</p>
+
+<p>
+--collection?? <br>
+ <br>
+</p>
+
+
+<p>
+The %TYPE attribute lets you declare a data item of the same data type as a previously declared variable or column (without knowing what that type is). If the declaration of the referenced item changes, then the declaration of the referencing item changes accordingly.
+ <br>
+The %TYPE attribute lets you declare a constant, variable, collection element, record field, or subprogram parameter to be of the same data type as a previously declared variable or column (without knowing what that type is). The item declared with %TYPE is the referencing item, and the previously declared item is the referenced item.
+ <br>
+The referencing item inherits the following from the referenced item:
+ <br>
+Data type and size
+Constraints (unless the referenced item is a column)
+ <br>
+The %ROWTYPE attribute lets you declare a record that represents either a full or partial row of a database table or view. For every column of the full or partial row, the record has a field with the same name and data type. If the structure of the row changes, then the structure of the record changes accordingly.
+ <br>
+</p>
+
+<p>
+<br>
+</p>
