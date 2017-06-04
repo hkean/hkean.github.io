@@ -1,0 +1,27 @@
+<p>
+findout:
+struts framework step by step + tag 
+
+1. struts-config.xml // to configure bean, forward, action 
+--> Define a form bean named “helloWorldForm” and action controller mapping “HelloWorldAction“, match the /helloWorld web path to HelloWorldAction. It’s means all the request from /helloWorld web path will redirect to HelloWorldAction. The “name” attribute is use to define which action form will pass to this HelloWorldAction.
+type: java class name 
+	1.1 bean to store objects behaviour and state 
+	1.2 forward to which page 
+	1.3 action go to which page after perform a page // call bean name 
+
+	2. create bean/form class 
+--> Create a Struts Action Form to hold the “hello world” data later.
+
+3. create action class // extends Actions 
+--> Create a Struts Action (Action Controller) file to control how Struts will forward the request, just override the execute() method with your own logic here.
+
+4. modify web.xml // add <servlet> & <servlet-mapping> 
+--> In web.xml file, configure the Struts ActionServlet instance and map it with url-pattern “*.do”, so that the container is aware of all the “*.do” pattern will redirect to Struts ActionServlet.
+
+5. create jsp // helloWorld.jsp 
+--> Create a JSP page and access the Action Form object via Struts tag library and print it’s message property.
+	5.1 add taglib // taglib uri
+	5.2 add bean property 
+
+hibernate
+</p>
