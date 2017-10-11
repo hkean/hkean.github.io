@@ -1,0 +1,122 @@
+Html
+DETAILS
+ACTIVITY
+Today
+05:51
+T
+You uploaded an item
+Text
+Html
+No recorded activity before 11 October 2017
+
+<!--
+
+    Author: Maz
+    Date: 10/02/2017
+
+    This code is not intended to be a complete guide to Design Patterns, 
+    however it contains simplified examples that you can use
+    to get more beginner-friendly examples than what you find elsewhere.
+
+    I'm not a Design Pattern expert and i don't want to be one,
+    if you notice some errors (grammar, semantic, implementation, etc)
+    please leave a comment and let me figure out the issue
+    so i can solve it, you will be credited for your contribution.
+
+    All of the patterns illustrated here are covered
+    in the book "Javascript Design Patterns" by Addy Osmani,
+    you can read this book for free: https://goo.gl/xxrHrS
+    or you can buy the non-digital version: https://goo.gl/D7GfgY
+
+    Thanks to:
+
+    Font Awesome for the menu icon, 
+    Google Font for "Raleway",
+    DoFactory and the other linked sources for the UML diagrams,
+    Addy Osmani for his book available to all for free,
+    Ibrahim Diallo for provide an awesome Syntax Highlighter,
+    Mozilla and StackOverflow for their tutorials/explanations
+    Quandrius Jelthasar for correct a grammar error
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <title>Design Patterns by Example</title>
+    <!-- References for the non-hosted version -->
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header class="header">
+        <i class="fa fa-home" id="homeButton"></i>
+        <h2><b>Design Pattern</b> by Example</h2>
+    </header>
+    <div class="main_row" id="homeSection">
+        <div class="col-sm-4" style="margin-top: 100px;" id="singletonPattern">
+            <img src="http://www.csharpstar.com/wp-content/uploads/2016/02/Singleton.jpg" alt="Singleton UML">
+            <p>The Singleton Pattern</p>
+        </div>
+        <div class="col-sm-4">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Module-software-design-pattern.png/1280px-Module-software-design-pattern.png" alt="Module UML">
+            <p>The Module Pattern</p>
+        </div>
+        <div class="col-sm-4">
+            <img src="https://image.slidesharecdn.com/finaljs-designpatternpresentation-150622144556-lva1-app6891/95/javascript-common-design-patterns-72-638.jpg?cb=1434984527" alt="Command UML">
+            <p>The Command Pattern</p>
+        </div>
+        <div class="col-sm-4">
+            <img src="https://s3.amazonaws.com/media-p.slid.es/uploads/i-linkuo/images/801301/RMPGreeter.PNG" alt="Revealing Module">
+            <p>The Revealing Module Pattern</p>
+        </div>
+        <div class="col-sm-4">
+            <img src="https://raw.githubusercontent.com/SpongePowered/Mixin/master/docs/images/mixin_tut_1.png" alt="Mixin UML">
+            <p>The Mixin Pattern</p>
+        </div>
+        <div class="col-sm-4">
+            <img src="https://image.slidesharecdn.com/4-javascriptdesignpatterns-170508142603/95/javascript-design-patterns-8-638.jpg?cb=1494253726" alt="Creational UML">
+            <p>The Creational Pattern</p>
+        </div>        
+        <div class="col-sm-4">
+            <img src="https://www.safaribooksonline.com/library/view/learning-javascript-design/9781449334840/httpatomoreillycomsourceoreillyimages1547807.png" alt="Prototype UML">
+            <p>The Prototype Pattern</p>
+        </div>        
+        <div class="col-sm-4">
+            <img src="http://www.javascripttutorial.net/wp-content/uploads/2016/09/Create-Objects-in-JavaScript-Constructor-Pattern.png" alt="Constructor UML">
+            <p>The Constructor Pattern</p>
+        </div>        
+        <div class="col-sm-4">
+            <img src="http://www.dofactory.com/images/diagrams/javascript/javascript-decorator.jpg" alt="Decorator UML">
+            <p>The Decorator Pattern</p>
+        </div>
+        <div class="col-sm-4">
+            <img src="http://www.dofactory.com/images/diagrams/javascript/javascript-facade.jpg" alt="Facade UML">
+            <p>The Facade Pattern</p>
+        </div>
+        <div class="col-sm-4">
+            <img src="http://www.dofactory.com/images/diagrams/net/flyweight.gif" alt="Flyweight UML">
+            <p>The Flyweight Pattern</p>
+        </div>        
+        <div class="col-sm-4">
+            <img src="http://www.dofactory.com/images/diagrams/net/factory.gif" alt="Factory UML">
+            <p>The Factory Pattern</p>
+        </div>        
+        <div class="col-sm-4">
+            <img src="http://www.dofactory.com/images/diagrams/net/mediator.gif" alt="Mediator UML">
+            <p>The Mediator Pattern</p>
+        </div>
+    </div>
+    <div class="pattern_section" id="patternSection" style="margin-top: 100px; display: none;">
+        <h3 id="pattern_section-title"></h3>
+        <p id="pattern_section-info"></p>
+        <h4>Code Example</h4>
+        <pre><code class="js" id="pattern_section-code"></code></pre>
+    </div>
+</body>
+</html>
